@@ -1,0 +1,26 @@
+/*C program to print string in reverse using pointers*/
+#include <stdio.h>
+
+int main() 
+{
+    int i, n, *ptr, t;
+    
+    printf("Enter number of elements in array: ");
+    scanf("%d", &n);
+    int a[n];
+    ptr=a;
+    printf("Enter the elements of the array: ");
+    for(i=0; i<n; i++)
+    scanf("%d", &a[i]);
+    
+    for(i=0; i<(sizeof(a)/sizeof(int))/2; i++)
+    {t = *(ptr + i);
+        *(ptr + i) = *(ptr + n - i - 1);
+        *(ptr + n - i - 1) = t;}
+    
+    printf("The reversed array is : ");
+    for (i=0; i<(sizeof(a)/sizeof(int)); i++)
+    printf("%d ", *(ptr+i));
+    
+    return 0;
+}
