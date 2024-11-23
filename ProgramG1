@@ -1,0 +1,24 @@
+/*program to pass array to a function and find the average of given array elements*/
+#include <stdio.h>
+int avg (int *a, int n)
+{
+    int sum=0, avg, i;
+    for (i=0; i<n; i++)
+    sum =sum + *(a+i);
+    avg = sum/n;
+    return avg;
+}
+int main() 
+{
+    int i, n, average;
+    printf("Enter the max number of elements in array: ");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the elements of the array: ");
+    for (i=0; i<n; i++)
+    scanf("%d", &a[i]);
+    average = avg ( a, sizeof(a)/sizeof(int));
+    printf("The avgerage of elements in the array is %d.", average);
+   
+    return 0;
+}
