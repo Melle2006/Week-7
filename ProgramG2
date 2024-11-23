@@ -1,0 +1,36 @@
+/*program to find the largest element in a given array by allocation memory dynamically*/
+#include <stdio.h>
+#include <stdlib.h>
+int logic (int *a, int n)
+{
+    int sum=0, avg, i, j, t;
+    for (i=0; i<n-1; i++)
+          {
+              for (j=0; j<n-i-1; j++)
+              {
+                  if (a[j]>a[j+1])
+                  {
+                      t=a[j];
+                      a[j]=a[j+1];
+                      a[j+1]=t;
+                  }
+              }
+          }
+      return a[n-1];
+}
+int main() 
+{
+    int i, n, max;
+    printf("Enter the max number of elements in array: ");
+    scanf("%d", &n);
+    
+   
+    int *a = (int *)malloc(n * sizeof(int));
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    max = logic ( a, n);
+    printf("The max value of the elements in the array is %d.", max);
+   free(a);
+  return 0;
+}
