@@ -1,0 +1,28 @@
+ /*Program to implement bit fields*/
+#include <stdio.h>
+struct dob
+{
+    unsigned int day :5;
+    unsigned int month :4;
+    unsigned int year: 11;
+} s;
+int main() 
+{
+    int n, m, tempDay, tempMonth, tempYear;
+    printf("Enter the date: ");
+    scanf("%u", &tempDay);
+     
+    printf("Enter the month: ");
+    scanf("%u", &tempMonth);
+    
+    printf("Enter the year: ");
+    scanf("%u", &tempYear);
+    
+    s.day = tempDay;
+    s.month = tempMonth;
+    s.year = tempYear;
+    
+    printf("DOB is %u/%u/%u", s.day, s.month, s.year);
+
+    return 0;
+}
